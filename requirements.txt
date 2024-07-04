@@ -1,0 +1,6 @@
+streamlit
+streamlit-authenticator
+langchain
+langchain-core
+langchain-community
+langchain-pinecone
