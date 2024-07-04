@@ -98,7 +98,6 @@ if st.button(label='wis chatgeschiedenis', key='grote_rode_knop', help='verwijde
              type='primary'):
     st.session_state['chat_history'] = []
 
-# TODO: Refactoren met Langchain AIMessage, HumanMessage
 for message in st.session_state['chat_history']:
     with st.chat_message(message.type):
         st.markdown(message.content)
