@@ -2,3 +2,4 @@
 .venv/Lib
 /.streamlit/secrets.toml
 *.iml
+*.idea
