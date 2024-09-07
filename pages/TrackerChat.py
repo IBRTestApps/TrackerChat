@@ -102,7 +102,7 @@ for message in st.session_state['chat_history']:
     with st.chat_message(message.type):
         st.markdown(message.content)
 
-if prompt := st.chat_input(placeholder='Stel uw vraag', key='user_input', max_chars=500):
+if prompt := st.chat_input(placeholder='Stel uw vraag', key='user_input'):
     with st.chat_message('Human'):
         st.markdown(prompt)
     st.session_state['chat_history'].append(HumanMessage(content=prompt))
