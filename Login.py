@@ -13,7 +13,7 @@ authenticator = st_auth.Authenticate(
 authenticator.login(location='main')
 if st.session_state["authentication_status"]:
     st.switch_page('pages/TrackerChat.py')
-elif st.session_state["authentication_status"] is False:
+elif st.session_state["authentication_status"] == False:
     st.error('Gebruikersnaam/wachtwoord is incorrect')
-elif st.session_state["authentication_status"] is False:
+elif st.session_state["authentication_status"] == None:
     st.warning('Voer uw gebruikersnaam en wachtwoord in')
