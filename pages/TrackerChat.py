@@ -54,7 +54,7 @@ Action Input: the input to the action. You should NOT rewrite the user's questio
 Observation: the result of the action
 ... (this Thought/Action/Action Input/Observation can repeat N times)
 Thought: I now know the final answer
-Final Answer: the final answer to the original input question. Include the URLs in the metadata of the specific text fragments you used to answer the user question. Respond in Dutch.
+Final Answer: the final answer to the original input question. Try to be as detailed as possible in your answer. Include the URLs in the metadata of the specific text fragments you used to answer the user question. Respond in Dutch.
 
 Begin!
 chat history so far {chat_history}
