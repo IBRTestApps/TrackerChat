@@ -10,7 +10,7 @@ authenticator = st_auth.Authenticate(
     st.secrets["cookie"]["expiry_days"],
     st.secrets["preauthorized"])
 
-authenticator.login(location='main')
+name, authentication_status, username = authenticator.login('main')
 if st.session_state["authentication_status"]:
     st.switch_page('pages/TrackerChat.py')
 elif st.session_state["authentication_status"] == False:
