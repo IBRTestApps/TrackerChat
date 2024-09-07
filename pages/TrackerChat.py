@@ -28,12 +28,12 @@ embeddings = OpenAIEmbeddings(model='text-embedding-3-large', api_key=openai_api
 template = "Text: {page_content}\n\nmetadata: {URL}"
 document_prompt = PromptTemplate.from_template(template)
 vectorstore = PineconeVectorStore.from_existing_index(index_name=index_name, embedding=embeddings)
-pinecone_retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
+pinecone_retriever = vectorstore.as_retriever(search_kwargs={'k': 5})
 pinecone_retriever_tool = create_retriever_tool(pinecone_retriever,
                                                 name="Pinecone Vector Database",
                                                 description='Find relevant text fragments in a database containing'
                                                             ' legal publications. Use these fragments as context'
-                                                            ' for answeting questions. The fragments have both text'
+                                                            ' for answering questions. The fragments have both text'
                                                             ' and a URL source.',
                                                 document_prompt=document_prompt,
                                                 document_separator='\n---------------\n')
@@ -50,7 +50,7 @@ Use the following format:
 Question: the input question you must answer
 Thought: you should always think about what to do
 Action: the action to take, should be one of [{tool_names}]
-Action Input: the input to the action
+Action Input: the input to the action. You should NOT rewrite the user's question.
 Observation: the result of the action
 ... (this Thought/Action/Action Input/Observation can repeat N times)
 Thought: I now know the final answer
